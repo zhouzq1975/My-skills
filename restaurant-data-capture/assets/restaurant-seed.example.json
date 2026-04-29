@@ -1,0 +1,18 @@
+{
+  "inputNameRaw": "陈记牛肉面馆Kreuzberg店",
+  "nameZh": "陈记牛肉面馆Kreuzberg店",
+  "nameEn": "Chen's Beef Noodle House Kreuzberg",
+  "nameDe": "Chen's Beef Noodle House Kreuzberg",
+  "addressRaw": "Adalbertstraße 7, 10999 Berlin, Germany",
+  "city": "Berlin",
+  "country": "Germany",
+  "googleMapsUrl": "https://maps.google.com/",
+  "extra_fields": {
+    "category": null,
+    "categoryCode": null,
+    "chain": null,
+    "chainBool": null,
+    "neighborhood": null,
+    "neighborhoodCode": null
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "packet_meta": {
+    "packetId": "",
+    "city": "",
+    "country": "",
+    "slug": "",
+    "createdAt": null,
+    "updatedAt": null,
+    "schemaVersion": 2
+  },
+  "seed": {
+    "inputNameRaw": null,
+    "nameZh": null,
+    "nameEn": null,
+    "nameDe": null,
+    "addressRaw": "",
+    "city": "",
+    "country": "",
+    "googleMapsUrl": null,
+    "extra_fields": {
+      "category": null,
+      "categoryCode": null,
+      "chain": null,
+      "chainBool": null,
+      "neighborhood": null,
+      "neighborhoodCode": null
+    }
+  },
+  "identity": {
+    "canonicalName": null,
+    "aliases": [],
+    "branchName": null,
+    "branchCode": null,
+    "addressNormalized": null,
+    "geo": {
+      "lat": null,
+      "lng": null
+    },
+    "neighborhood": null,
+    "neighborhoodCode": null,
+    "phone": null,
+    "website": null,
+    "officialSocialAccounts": [],
+    "placeId": null,
+    "tripadvisorId": null,
+    "deliveryPlatformIds": {
+      "wolt": null,
+      "lieferando": null,
+      "uberEats": null
+    },
+    "identityMatchConfidence": null
+  },
+  "observed": {
+    "opening_hours": [],
+    "price": {
+      "priceRangeDisplay": null,
+      "priceRangeCode": null,
+      "minPriceEur": null,
+      "maxPriceEur": null
+    },
+    "service_modes": [],
+    "menus": [],
+    "review_signals": {
+      "google": null,
+      "tripadvisor": null
+    },
+    "reviews_raw": {
+      "google": [],
+      "tripadvisor": []
+    },
+    "photos": []
+  },
+  "normalized": {
+    "cuisineLabels": [],
+    "cuisineCodes": [],
+    "dietaryTags": [],
+    "dishEntities": []
+  },
+  "inferred": {
+    "positioning_summary": null,
+    "short_description_zh": null,
+    "short_description_en": null,
+    "short_description_de": null,
+    "is_new_opening": null
+  },
+  "extracted": {
+    "reviewInsights": {
+      "recommendedDishes": [],
+      "dishMentions": []
+    },
+    "searchTerms": {
+      "restaurantAliases": [],
+      "cuisineAliases": [],
+      "dishAliases": [],
+      "exactTerms": [],
+      "autocompleteTerms": [],
+      "styleTerms": [],
+      "occasionTerms": [],
+      "nonSpicyTerms": [],
+      "spicyTerms": [],
+      "languageHints": []
+    }
+  },
+  "field_status": {
+    "identity_name": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "identity_contact": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "identity_location": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "opening_hours": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "rating": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "full_menu": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "search_menu_coverage": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "search_review_coverage": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "google_places_api_new": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    },
+    "tripadvisor": {
+      "status": "not_obtained",
+      "failureReason": "source_not_found"
+    }
+  },
+  "source_packet": [],
+  "quality": {
+    "overallConfidence": null,
+    "servingReadiness": "partial",
+    "blockingReasons": [],
+    "needsReview": [],
+    "conflicts": [],
+    "lastCompiledAt": null
+  }
+}
