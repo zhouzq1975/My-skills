@@ -1,4 +1,4 @@
 interface:
   display_name: "Restaurant Data Capture"
-  short_description: "Capture and update restaurant source packets"
-  default_prompt: "Use $restaurant-data-capture to collect or update a restaurant source packet and emit one JSON file per restaurant."
+  short_description: "Build source-grounded Pinwo restaurant packets"
+  default_prompt: "Use $restaurant-data-capture to collect and validate a Source Packet V3 for this restaurant branch."

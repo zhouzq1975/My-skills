@@ -6,7 +6,7 @@
     "slug": "",
     "createdAt": null,
     "updatedAt": null,
-    "schemaVersion": 2
+    "schemaVersion": 3
   },
   "seed": {
     "inputNameRaw": null,
@@ -71,7 +71,6 @@
     "photos": []
   },
   "normalized": {
-    "cuisineLabels": [],
     "cuisineCodes": [],
     "dietaryTags": [],
     "dishEntities": []
@@ -81,9 +80,15 @@
     "short_description_zh": null,
     "short_description_en": null,
     "short_description_de": null,
+    "operating_status": "operating",
     "is_new_opening": null
   },
   "extracted": {
+    "cuisineTags": {
+      "zh": [],
+      "en": [],
+      "de": []
+    },
     "reviewInsights": {
       "recommendedDishes": [],
       "dishMentions": []
@@ -146,7 +151,7 @@
   "source_packet": [],
   "quality": {
     "overallConfidence": null,
-    "servingReadiness": "partial",
+    "servingReadiness": "not_ready",
     "blockingReasons": [],
     "needsReview": [],
     "conflicts": [],

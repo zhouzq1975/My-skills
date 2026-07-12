@@ -1,0 +1,4 @@
+interface:
+  display_name: "Standup Log Capture"
+  short_description: "Write repository-grounded AI continuation logs"
+  default_prompt: "Use $standup-log-capture to update today's repository-grounded continuation log for this project."

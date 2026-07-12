@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "order": [
+    "chinese",
+    "asian",
+    "cantonese",
+    "hong_kong",
+    "sichuan",
+    "hunan",
+    "shanghai",
+    "taiwanese",
+    "yunnan",
+    "guizhou",
+    "beijing",
+    "northern_chinese",
+    "northwestern_chinese",
+    "northeastern_chinese",
+    "jiangsu",
+    "huaiyang",
+    "guangxi",
+    "vietnamese",
+    "japanese",
+    "korean",
+    "thai",
+    "dim_sum",
+    "hotpot",
+    "malatang",
+    "maocai",
+    "buffet",
+    "noodle_house",
+    "hand_pulled_noodles",
+    "lanzhou_lamian",
+    "biang_biang_noodles",
+    "dumplings",
+    "bbq",
+    "skewers",
+    "tea_house",
+    "sushi",
+    "halal",
+    "vegan",
+    "vegetarian"
+  ],
+  "codes": {
+    "chinese": {
+      "group": "root",
+      "labelEn": "Chinese"
+    },
+    "asian": {
+      "group": "root",
+      "labelEn": "Asian"
+    },
+    "cantonese": {
+      "group": "regional",
+      "labelEn": "Cantonese"
+    },
+    "hong_kong": {
+      "group": "regional",
+      "labelEn": "Hong Kong-style"
+    },
+    "sichuan": {
+      "group": "regional",
+      "labelEn": "Sichuan"
+    },
+    "hunan": {
+      "group": "regional",
+      "labelEn": "Hunan"
+    },
+    "shanghai": {
+      "group": "regional",
+      "labelEn": "Shanghai-style"
+    },
+    "taiwanese": {
+      "group": "regional",
+      "labelEn": "Taiwanese"
+    },
+    "yunnan": {
+      "group": "regional",
+      "labelEn": "Yunnan"
+    },
+    "guizhou": {
+      "group": "regional",
+      "labelEn": "Guizhou"
+    },
+    "beijing": {
+      "group": "regional",
+      "labelEn": "Beijing-style"
+    },
+    "northern_chinese": {
+      "group": "regional",
+      "labelEn": "Northern Chinese"
+    },
+    "northwestern_chinese": {
+      "group": "regional",
+      "labelEn": "Northwestern Chinese"
+    },
+    "northeastern_chinese": {
+      "group": "regional",
+      "labelEn": "Northeastern Chinese"
+    },
+    "jiangsu": {
+      "group": "regional",
+      "labelEn": "Jiangsu"
+    },
+    "huaiyang": {
+      "group": "regional",
+      "labelEn": "Huaiyang"
+    },
+    "guangxi": {
+      "group": "regional",
+      "labelEn": "Guangxi"
+    },
+    "vietnamese": {
+      "group": "cross_cuisine",
+      "labelEn": "Vietnamese"
+    },
+    "japanese": {
+      "group": "cross_cuisine",
+      "labelEn": "Japanese"
+    },
+    "korean": {
+      "group": "cross_cuisine",
+      "labelEn": "Korean"
+    },
+    "thai": {
+      "group": "cross_cuisine",
+      "labelEn": "Thai"
+    },
+    "dim_sum": {
+      "group": "format",
+      "labelEn": "Dim sum"
+    },
+    "hotpot": {
+      "group": "format",
+      "labelEn": "Hotpot"
+    },
+    "malatang": {
+      "group": "format",
+      "labelEn": "Malatang"
+    },
+    "maocai": {
+      "group": "format",
+      "labelEn": "Mao cai"
+    },
+    "buffet": {
+      "group": "format",
+      "labelEn": "Buffet"
+    },
+    "noodle_house": {
+      "group": "format",
+      "labelEn": "Noodle house"
+    },
+    "hand_pulled_noodles": {
+      "group": "format",
+      "labelEn": "Hand-pulled noodles"
+    },
+    "lanzhou_lamian": {
+      "group": "format",
+      "labelEn": "Lanzhou lamian"
+    },
+    "biang_biang_noodles": {
+      "group": "format",
+      "labelEn": "Biang-biang noodles"
+    },
+    "dumplings": {
+      "group": "format",
+      "labelEn": "Dumplings"
+    },
+    "bbq": {
+      "group": "format",
+      "labelEn": "Barbecue"
+    },
+    "skewers": {
+      "group": "format",
+      "labelEn": "Skewers"
+    },
+    "tea_house": {
+      "group": "format",
+      "labelEn": "Tea house"
+    },
+    "sushi": {
+      "group": "cross_cuisine",
+      "labelEn": "Sushi"
+    },
+    "halal": {
+      "group": "dietary_or_religious",
+      "labelEn": "Halal"
+    },
+    "vegan": {
+      "group": "dietary_or_religious",
+      "labelEn": "Vegan"
+    },
+    "vegetarian": {
+      "group": "dietary_or_religious",
+      "labelEn": "Vegetarian"
+    }
+  }
+}

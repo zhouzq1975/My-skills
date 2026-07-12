@@ -28,8 +28,10 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-# Import the single-restaurant fetcher
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from category_taxonomy import canonicalize_category_fields
+
+# Import the single-restaurant fetcher
 from fetch_google_place import (
     canonicalize_packet,
     fetch_restaurant,
@@ -81,16 +83,10 @@ def build_seed_payload(
         or seed_data.get("neighborhood")
         or seed_data.get("district")
     )
-    category_code = extra_fields.get("categoryCode")
-    if not category_code:
-        if category in {"小吃", "Snack", "snack"}:
-            category_code = "snack"
-        elif category in {"饭店", "Restaurant", "restaurant"}:
-            category_code = "restaurant"
-        elif category in {"面馆", "Noodle house", "noodle house", "noodle_house"}:
-            category_code = "noodle_house"
-        elif category:
-            category_code = str(category).strip().lower().replace(" ", "-")
+    category, category_code = canonicalize_category_fields(
+        category=category,
+        category_code=extra_fields.get("categoryCode"),
+    )
     chain_bool = extra_fields.get("chainBool")
     if chain_bool is None and chain is not None:
         chain_text = str(chain).strip()
@@ -161,7 +157,7 @@ def has_api_data(packet: dict[str, Any]) -> bool:
 def read_csv(csv_path: Path) -> list[dict[str, str]]:
     """Read restaurant list from CSV.
 
-    Preferred V2 seed columns:
+    Preferred V3 seed columns:
       inputNameRaw
       nameZh
       nameEn

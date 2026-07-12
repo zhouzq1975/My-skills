@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Argument Essay"
+  short_description: "Write clear, evidence-grounded argumentative essays"
+  default_prompt: "Use $clear-argument-essay to turn these notes into a clear argument-led essay."
