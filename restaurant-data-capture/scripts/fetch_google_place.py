@@ -17,11 +17,15 @@ import json
 import os
 import re
 import sys
+from functools import lru_cache
 from copy import deepcopy
 from datetime import date
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+
+from category_taxonomy import canonicalize_category_fields
+from dish_code_taxonomy import unknown_dish_codes
 
 try:
     import requests
@@ -56,8 +60,10 @@ DETAIL_FIELD_MASK = ",".join([
     "googleMapsUri",
     "reviews",
 ])
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 HTTP_TIMEOUT = 15
+CUISINE_TAXONOMY_PATH = Path(__file__).resolve().parent.parent / "assets" / "cuisine-code-taxonomy.json"
+CUISINE_TAG_TAXONOMY_PATH = Path(__file__).resolve().parent.parent / "assets" / "cuisine-tag-taxonomy.json"
 
 
 def load_dotenv(path: Path) -> None:
@@ -83,6 +89,104 @@ def get_api_key() -> str:
             "GOOGLE_PLACES_API_NEW_KEY not set. Set it in environment or in scripts/.env"
         )
     return key
+
+
+@lru_cache(maxsize=1)
+def load_cuisine_taxonomy() -> dict[str, Any]:
+    with CUISINE_TAXONOMY_PATH.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+@lru_cache(maxsize=1)
+def load_cuisine_tag_taxonomy() -> dict[str, Any]:
+    with CUISINE_TAG_TAXONOMY_PATH.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def canonicalize_cuisine_codes(codes: list[Any]) -> list[str]:
+    taxonomy = load_cuisine_taxonomy()
+    allowed = taxonomy.get("codes") or {}
+    order = taxonomy.get("order") or []
+    order_index = {code: idx for idx, code in enumerate(order)}
+
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in codes or []:
+        if not isinstance(raw, str):
+            continue
+        code = raw.strip()
+        if not code or code not in allowed or code in seen:
+            continue
+        seen.add(code)
+        out.append(code)
+    out.sort(key=lambda code: (order_index.get(code, 9999), code))
+    return out
+
+
+def canonicalize_cuisine_tags(cuisine_tags: dict[str, Any]) -> dict[str, list[str]]:
+    taxonomy = load_cuisine_tag_taxonomy()
+    entries = taxonomy.get("tags") or []
+
+    by_zh: dict[str, dict[str, str]] = {}
+    by_en: dict[str, dict[str, str]] = {}
+    by_de: dict[str, dict[str, str]] = {}
+    for entry in entries:
+        zh = str(entry.get("zh") or "").strip()
+        en = str(entry.get("en") or "").strip()
+        de = str(entry.get("de") or "").strip()
+        if not zh or not en or not de:
+            continue
+        canonical = {"zh": zh, "en": en, "de": de}
+        by_zh[zh] = canonical
+        by_en[en.casefold()] = canonical
+        by_de[de.casefold()] = canonical
+
+    zh_in = deepcopy((cuisine_tags or {}).get("zh") or [])
+    en_in = deepcopy((cuisine_tags or {}).get("en") or [])
+    de_in = deepcopy((cuisine_tags or {}).get("de") or [])
+    max_len = max(len(zh_in), len(en_in), len(de_in), 0)
+
+    zh_out: list[str] = []
+    en_out: list[str] = []
+    de_out: list[str] = []
+    seen: set[str] = set()
+    unmatched: list[str] = []
+
+    for idx in range(max_len):
+        zh = zh_in[idx].strip() if idx < len(zh_in) and isinstance(zh_in[idx], str) else ""
+        en = en_in[idx].strip() if idx < len(en_in) and isinstance(en_in[idx], str) else ""
+        de = de_in[idx].strip() if idx < len(de_in) and isinstance(de_in[idx], str) else ""
+
+        canonical = None
+        if zh and zh in by_zh:
+            canonical = by_zh[zh]
+        elif en and en.casefold() in by_en:
+            canonical = by_en[en.casefold()]
+        elif de and de.casefold() in by_de:
+            canonical = by_de[de.casefold()]
+
+        if not canonical:
+            raw_triplet = " / ".join(value for value in (zh, en, de) if value)
+            if raw_triplet:
+                unmatched.append(raw_triplet)
+            continue
+        if canonical["zh"] in seen:
+            continue
+        seen.add(canonical["zh"])
+        zh_out.append(canonical["zh"])
+        en_out.append(canonical["en"])
+        de_out.append(canonical["de"])
+
+    if unmatched:
+        print(
+            "WARNING: extracted.cuisineTags contains values not present in "
+            "/Users/zhouziqiang/.codex/skills/restaurant-data-capture/assets/cuisine-tag-taxonomy.json: "
+            + "; ".join(unmatched[:20])
+            + (" ..." if len(unmatched) > 20 else ""),
+            file=sys.stderr,
+        )
+
+    return {"zh": zh_out, "en": en_out, "de": de_out}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -198,6 +302,73 @@ def review_text(review: dict[str, Any]) -> str | None:
     if isinstance(original, str):
         return original
     return None
+
+
+FOOD_REVIEW_TERMS = [
+    "mapo tofu",
+    "dumpling",
+    "dumplings",
+    "noodle",
+    "noodles",
+    "rice",
+    "soup",
+    "wonton",
+    "bao",
+    "tofu",
+    "duck",
+    "chicken",
+    "beef",
+    "pork",
+    "fish",
+    "shrimp",
+    "hotpot",
+    "malatang",
+    "mala",
+    "dim sum",
+    "麻婆豆腐",
+    "担担面",
+    "小面",
+    "重庆小面",
+    "面",
+    "面条",
+    "米线",
+    "饺子",
+    "馄饨",
+    "云吞",
+    "包子",
+    "小笼包",
+    "豆腐",
+    "鸭",
+    "鸡",
+    "牛肉",
+    "猪肉",
+    "鱼",
+    "虾",
+    "火锅",
+    "麻辣烫",
+    "冒菜",
+    "点心",
+    "炒饭",
+    "炒面",
+]
+
+
+def extract_food_review_terms(text: str | None) -> list[str]:
+    if not text:
+        return []
+    normalized = text.casefold()
+    out: list[str] = []
+    for term in FOOD_REVIEW_TERMS:
+        if re.search(r"[\u3400-\u9fff]", term):
+            matched = term in text
+        else:
+            matched = re.search(rf"\b{re.escape(term.casefold())}\b", normalized) is not None
+        if matched and term not in out:
+            out.append(term)
+    return [
+        term for term in out
+        if not any(term != other and term.casefold() in other.casefold() for other in out)
+    ]
 
 
 def adapt_place_new(place: dict[str, Any]) -> dict[str, Any]:
@@ -357,6 +528,24 @@ def fetch_restaurant(name: str, address: str, api_key: str) -> dict[str, Any] | 
         }
 
 
+def fetch_restaurant_by_place_id(place_id: str, api_key: str) -> dict[str, Any] | None:
+    with build_session() as session:
+        print(f"  ✓ Using existing place_id: {place_id}", file=sys.stderr)
+        details = fetch_place_details_with_fallback(place_id, api_key, session)
+        details_en = details.get("en")
+        details_zh = details.get("zh-CN")
+        details_de = details.get("de")
+        if not details_en:
+            print(f"  ⚠ Place Details failed for: {place_id}", file=sys.stderr)
+            return None
+        return {
+            "place_id": place_id,
+            "details_en": details_en,
+            "details_zh": details_zh,
+            "details_de": details_de,
+        }
+
+
 def extract_weekly_hours(details: dict[str, Any]) -> dict[str, str] | None:
     oh = details.get("opening_hours")
     if not oh:
@@ -377,15 +566,19 @@ def extract_reviews_raw(details: dict[str, Any], lang: str) -> list[dict[str, An
     if not reviews:
         return []
     rows = []
-    for r in reviews[:5]:
+    for r in reviews:
+        text = r.get("text")
+        dish_terms = extract_food_review_terms(text)
+        if not dish_terms:
+            continue
         rows.append({
             "platform": "google_maps_places_api",
             "rating": r.get("rating"),
             "language": lang,
-            "text": r.get("text"),
+            "text": text,
             "publishedAtRaw": r.get("relative_time_description"),
-            "dishTermsRaw": [],
-            "selectionReason": "food_search_evidence_unclassified",
+            "dishTermsRaw": dish_terms,
+            "selectionReason": "concrete_food_search_evidence",
         })
     return rows
 
@@ -395,16 +588,10 @@ def canonicalize_seed(seed: dict[str, Any]) -> dict[str, Any]:
     category = first_non_empty(extra_fields.get("category"), seed.get("category"))
     chain = first_non_empty(extra_fields.get("chain"), seed.get("chain"))
     neighborhood = first_non_empty(extra_fields.get("neighborhood"), extra_fields.get("district"), seed.get("neighborhood"), seed.get("district"))
-    category_code = first_non_empty(extra_fields.get("categoryCode"), seed.get("categoryCode"))
-    if not category_code:
-        if category in {"小吃", "Snack", "snack"}:
-            category_code = "snack"
-        elif category in {"饭店", "Restaurant", "restaurant"}:
-            category_code = "restaurant"
-        elif category in {"面馆", "Noodle house", "noodle house", "noodle_house"}:
-            category_code = "noodle_house"
-        elif category:
-            category_code = str(category).strip().lower().replace(" ", "-")
+    category, category_code = canonicalize_category_fields(
+        category=category,
+        category_code=first_non_empty(extra_fields.get("categoryCode"), seed.get("categoryCode")),
+    )
     chain_bool = first_non_empty(extra_fields.get("chainBool"), seed.get("chainBool"))
     if chain_bool is None and chain is not None:
         chain_text = str(chain).strip()
@@ -566,28 +753,49 @@ def canonicalize_normalized(normalized: dict[str, Any]) -> dict[str, Any]:
                     }
                 ] if item.get("source") or item.get("sourceUrl") else [],
             })
+    unknown_codes = unknown_dish_codes(dish_entities)
+    if unknown_codes:
+        print(
+            "WARNING: normalized.dishEntities contains dishCode values not present in "
+            "/Volumes/媒体/chopmap/data/taxonomies/dish-code-taxonomy.json. "
+            "Do not treat these as global dish codes until reviewed: "
+            + ", ".join(unknown_codes[:20])
+            + (" ..." if len(unknown_codes) > 20 else ""),
+            file=sys.stderr,
+        )
     return {
-        "cuisineLabels": deepcopy(normalized.get("cuisineLabels") or normalized.get("categories") or []),
-        "cuisineCodes": deepcopy(normalized.get("cuisineCodes") or []),
+        "cuisineCodes": canonicalize_cuisine_codes(deepcopy(normalized.get("cuisineCodes") or [])),
         "dietaryTags": deepcopy(normalized.get("dietaryTags") or normalized.get("dietary_tags") or []),
         "dishEntities": dish_entities,
     }
 
 
 def canonicalize_inferred(inferred: dict[str, Any]) -> dict[str, Any]:
+    # Legacy fallback for packets that still carry the old inferred key.
+    old_new_opening = inferred.get("is_new_opening")
+    operating_status = inferred.get("operating_status")
+    if operating_status is None:
+        operating_status = "operating"
+    if operating_status == "newly_opened":
+        operating_status = "operating"
+        if old_new_opening is None:
+            old_new_opening = True
     return {
         "positioning_summary": inferred.get("positioning_summary"),
         "short_description_zh": inferred.get("short_description_zh"),
         "short_description_en": inferred.get("short_description_en"),
         "short_description_de": inferred.get("short_description_de"),
-        "is_new_opening": inferred.get("is_new_opening"),
+        "operating_status": operating_status,
+        "is_new_opening": old_new_opening if isinstance(old_new_opening, bool) else None,
     }
 
 
 def canonicalize_extracted(extracted: dict[str, Any]) -> dict[str, Any]:
     review_insights = deepcopy(extracted.get("reviewInsights") or {})
     search_terms = deepcopy(extracted.get("searchTerms") or extracted.get("searchCandidates") or {})
+    cuisine_tags = deepcopy(extracted.get("cuisineTags") or {})
     return {
+        "cuisineTags": canonicalize_cuisine_tags(cuisine_tags),
         "reviewInsights": {
             "recommendedDishes": deepcopy(review_insights.get("recommendedDishes") or []),
             "dishMentions": deepcopy(review_insights.get("dishMentions") or []),
@@ -652,10 +860,16 @@ def canonicalize_source_packet(rows: list[dict[str, Any]]) -> list[dict[str, Any
     return out
 
 
+def normalize_serving_readiness(value: Any) -> str:
+    if value == "ready":
+        return "ready"
+    return "not_ready"
+
+
 def canonicalize_quality(quality: dict[str, Any]) -> dict[str, Any]:
     return {
         "overallConfidence": first_non_empty(quality.get("overallConfidence"), quality.get("overall_confidence")),
-        "servingReadiness": quality.get("servingReadiness") or "partial",
+        "servingReadiness": normalize_serving_readiness(quality.get("servingReadiness")),
         "blockingReasons": deepcopy(quality.get("blockingReasons") or []),
         "needsReview": deepcopy(first_non_empty(quality.get("needsReview"), quality.get("needs_review"), [])),
         "conflicts": deepcopy(quality.get("conflicts") or []),
@@ -757,11 +971,11 @@ def maybe_set_serving_readiness(packet: dict[str, Any]) -> None:
     has_blocking_conflict = any("identity" in c.lower() or "location" in c.lower() or "branch" in c.lower() for c in conflicts if isinstance(c, str))
 
     if has_blocking_conflict:
-        quality["servingReadiness"] = "blocked"
+        quality["servingReadiness"] = "not_ready"
     elif name_ok and loc_ok and dish_ok and search_ok:
         quality["servingReadiness"] = "ready"
     else:
-        quality["servingReadiness"] = "partial"
+        quality["servingReadiness"] = "not_ready"
 
 
 def merge_into_packet(packet: dict[str, Any], api_data: dict[str, Any]) -> dict[str, Any]:
@@ -921,6 +1135,7 @@ def main() -> None:
     address = args.address
     packet = None
     packet_path = None
+    existing_place_id = None
 
     if args.packet:
         packet_path = Path(args.packet).resolve()
@@ -930,6 +1145,7 @@ def main() -> None:
             name = seed.get("nameEn") or seed.get("nameZh") or seed.get("nameDe")
         if not address:
             address = seed.get("addressRaw", "")
+        existing_place_id = (packet.get("identity") or {}).get("placeId")
 
     if not name:
         parser.error("--name is required (or provide --packet with a seed)")
@@ -952,14 +1168,22 @@ def main() -> None:
             write_packet(output_path, mark_api_failure(packet, "api_key_not_configured", str(exc), url=url))
         sys.exit(1)
 
-    try:
-        api_data = fetch_restaurant(name, address, api_key)
-    except requests.RequestException as exc:
-        print(f"  ✗ Places API request failed: {exc}", file=sys.stderr)
-        if packet is not None and output_path is not None:
-            url = packet["seed"].get("googleMapsUrl", "") or ""
-            write_packet(output_path, mark_api_failure(packet, "api_call_failed", str(exc), url=url))
-        sys.exit(1)
+    api_data = None
+    if existing_place_id:
+        try:
+            api_data = fetch_restaurant_by_place_id(existing_place_id, api_key)
+        except requests.RequestException as exc:
+            print(f"  ⚠ Place Details by existing place_id failed: {exc}", file=sys.stderr)
+
+    if not api_data:
+        try:
+            api_data = fetch_restaurant(name, address, api_key)
+        except requests.RequestException as exc:
+            print(f"  ✗ Places API request failed: {exc}", file=sys.stderr)
+            if packet is not None and output_path is not None:
+                url = packet["seed"].get("googleMapsUrl", "") or ""
+                write_packet(output_path, mark_api_failure(packet, "api_call_failed", str(exc), url=url))
+            sys.exit(1)
 
     if not api_data:
         print("  ✗ No results from Places API.", file=sys.stderr)

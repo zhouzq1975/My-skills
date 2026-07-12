@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "order": [
+    "restaurant",
+    "noodle_house",
+    "snack",
+    "malatang_maocai",
+    "hotpot",
+    "vegetarian",
+    "vegan",
+    "dim_sum",
+    "bbq",
+    "skewers",
+    "hotpot_bbq",
+    "taiwanese_noodle_house"
+  ],
+  "categories": {
+    "restaurant": {
+      "zh": "饭店",
+      "en": "Restaurant",
+      "de": "Restaurant"
+    },
+    "noodle_house": {
+      "zh": "面馆",
+      "en": "Noodle house",
+      "de": "Nudelhaus"
+    },
+    "snack": {
+      "zh": "小吃",
+      "en": "Snack spot",
+      "de": "Snacklokal"
+    },
+    "malatang_maocai": {
+      "zh": "麻辣烫/冒菜",
+      "en": "Malatang/Maocai",
+      "de": "Malatang/Maocai"
+    },
+    "hotpot": {
+      "zh": "火锅",
+      "en": "Hotpot restaurant",
+      "de": "Hotpot-Restaurant"
+    },
+    "vegetarian": {
+      "zh": "素食",
+      "en": "Vegetarian restaurant",
+      "de": "Vegetarisches Restaurant"
+    },
+    "vegan": {
+      "zh": "素食",
+      "en": "Vegan restaurant",
+      "de": "Veganes Restaurant"
+    },
+    "dim_sum": {
+      "zh": "点心",
+      "en": "Dim sum restaurant",
+      "de": "Dim-Sum-Restaurant"
+    },
+    "bbq": {
+      "zh": "烧烤",
+      "en": "BBQ restaurant",
+      "de": "BBQ-Restaurant"
+    },
+    "skewers": {
+      "zh": "串烧",
+      "en": "Skewer restaurant",
+      "de": "Spießgrill-Restaurant"
+    },
+    "hotpot_bbq": {
+      "zh": "火锅烧烤",
+      "en": "Hotpot and BBQ restaurant",
+      "de": "Hotpot- und BBQ-Restaurant"
+    },
+    "taiwanese_noodle_house": {
+      "zh": "台湾面馆",
+      "en": "Taiwanese noodle house",
+      "de": "Taiwanesisches Nudelhaus"
+    }
+  },
+  "aliases": {
+    "饭店": "restaurant",
+    "restaurant": "restaurant",
+    "中餐": "restaurant",
+    "chinese_restaurant": "restaurant",
+    "面馆": "noodle_house",
+    "noodle_house": "noodle_house",
+    "noodle shop": "noodle_house",
+    "noodle_shop": "noodle_house",
+    "noodle restaurant": "noodle_house",
+    "noodle_restaurant": "noodle_house",
+    "小吃": "snack",
+    "snack": "snack",
+    "snack restaurant": "snack",
+    "snack_restaurant": "snack",
+    "street food": "snack",
+    "street_food": "snack",
+    "麻辣烫/冒菜": "malatang_maocai",
+    "malatang": "malatang_maocai",
+    "malatang_maocai": "malatang_maocai",
+    "mala tang mao cai": "malatang_maocai",
+    "mala_tang_mao_cai": "malatang_maocai",
+    "火锅": "hotpot",
+    "hotpot": "hotpot",
+    "素食": "vegetarian",
+    "vegetarian": "vegetarian",
+    "vegan chinese": "vegan",
+    "vegan_chinese": "vegan",
+    "vegan": "vegan",
+    "点心": "dim_sum",
+    "dim sum": "dim_sum",
+    "dim_sum": "dim_sum",
+    "dimsum": "dim_sum",
+    "烧烤": "bbq",
+    "bbq": "bbq",
+    "串烧": "skewers",
+    "bbq skewers": "skewers",
+    "bbq_skewers": "skewers",
+    "火锅烧烤": "hotpot_bbq",
+    "hotpot bbq": "hotpot_bbq",
+    "hotpot_bbq": "hotpot_bbq",
+    "台湾面馆": "taiwanese_noodle_house",
+    "taiwanese noodles": "taiwanese_noodle_house",
+    "taiwanese_noodles": "taiwanese_noodle_house",
+    "taiwanese noodle house": "taiwanese_noodle_house",
+    "taiwanese_noodle_house": "taiwanese_noodle_house"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pinwo Article Publishing"
+  short_description: "Publish verified Pinwo trilingual articles"
+  default_prompt: "Use $pinwo-article-publishing to integrate this draft as a verified trilingual Pinwo article."

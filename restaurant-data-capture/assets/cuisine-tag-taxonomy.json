@@ -1,0 +1,1322 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "key": "home_style_chinese_dishes",
+      "zh": "家常菜",
+      "en": "home-style Chinese dishes",
+      "de": "chinesische Hausmannskost",
+      "group": "style_or_scene",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "dim_sum",
+      "zh": "点心",
+      "en": "dim sum",
+      "de": "Dim Sum",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "dim_sum"
+      ]
+    },
+    {
+      "key": "sichuan_cuisine",
+      "zh": "川菜",
+      "en": "Sichuan cuisine",
+      "de": "Sichuan-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "guizhou_cuisine",
+      "zh": "贵州菜",
+      "en": "Guizhou cuisine",
+      "de": "Guizhou-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "guizhou"
+      ]
+    },
+    {
+      "key": "dumplings",
+      "zh": "饺子",
+      "en": "dumplings",
+      "de": "Dumplings",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dumplings"
+      ]
+    },
+    {
+      "key": "casual_small_restaurant_meals",
+      "zh": "小馆简餐",
+      "en": "casual small-restaurant meals",
+      "de": "lockere Bistrogerichte",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "bistro",
+      "zh": "Bistro小馆",
+      "en": "bistro",
+      "de": "Bistro",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "german_style_chinese_food",
+      "zh": "德式中餐",
+      "en": "German-style Chinese food",
+      "de": "deutsch-chinesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "beef_noodle_soup",
+      "zh": "牛肉面",
+      "en": "beef noodle soup",
+      "de": "Rindfleischnudelsuppe",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "wheat_dishes",
+      "zh": "面食",
+      "en": "wheat dishes",
+      "de": "Nudel- und Teigwaren",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "fried_rice_and_fried_noodles",
+      "zh": "炒饭炒面",
+      "en": "fried rice and fried noodles",
+      "de": "gebratener Reis und gebratene Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "baozi",
+      "zh": "包子",
+      "en": "baozi",
+      "de": "Baozi",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dumplings"
+      ]
+    },
+    {
+      "key": "cantonese_cuisine",
+      "zh": "粤菜",
+      "en": "Cantonese cuisine",
+      "de": "kantonesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "cantonese"
+      ]
+    },
+    {
+      "key": "handmade_noodles",
+      "zh": "手工面",
+      "en": "handmade noodles",
+      "de": "handgemachte Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "xiaolongbao",
+      "zh": "小笼包",
+      "en": "xiaolongbao",
+      "de": "Xiaolongbao",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dim_sum",
+        "dumplings"
+      ]
+    },
+    {
+      "key": "stir_fries",
+      "zh": "热炒",
+      "en": "stir-fries",
+      "de": "Wokgerichte",
+      "group": "style_or_scene",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "northwestern_chinese_wheat_dishes",
+      "zh": "西北面食",
+      "en": "northwestern Chinese wheat dishes",
+      "de": "nordwestchinesische Teigwaren",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northwestern_chinese"
+      ]
+    },
+    {
+      "key": "peking_duck",
+      "zh": "北京烤鸭",
+      "en": "Peking duck",
+      "de": "Pekingente",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "beijing"
+      ]
+    },
+    {
+      "key": "banquet_style_chinese_dining",
+      "zh": "宴席中餐",
+      "en": "banquet-style Chinese dining",
+      "de": "chinesische Bankettküche",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "wontons",
+      "zh": "馄饨",
+      "en": "wontons",
+      "de": "Wan-Tan",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dumplings"
+      ]
+    },
+    {
+      "key": "lanzhou_hand_pulled_noodles",
+      "zh": "兰州拉面",
+      "en": "Lanzhou hand-pulled noodles",
+      "de": "Lanzhou-Lamian",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "lanzhou_lamian"
+      ]
+    },
+    {
+      "key": "hong_kong_style",
+      "zh": "港式",
+      "en": "Hong Kong style",
+      "de": "Hongkong-Stil",
+      "group": "regional_or_style",
+      "codeHints": [
+        "hong_kong"
+      ]
+    },
+    {
+      "key": "hotpot",
+      "zh": "火锅",
+      "en": "hotpot",
+      "de": "Hotpot",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "hotpot"
+      ]
+    },
+    {
+      "key": "roast_meats",
+      "zh": "烧味",
+      "en": "roast meats",
+      "de": "kantonesische Braten",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "cantonese",
+        "hong_kong"
+      ]
+    },
+    {
+      "key": "barbecue",
+      "zh": "烧烤",
+      "en": "barbecue",
+      "de": "Barbecue",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "bbq"
+      ]
+    },
+    {
+      "key": "broad_chinese_menu",
+      "zh": "综合中餐",
+      "en": "broad Chinese menu",
+      "de": "breite chinesische Speisekarte",
+      "group": "regional_or_style",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "biang_biang_noodles",
+      "zh": "Biang Biang面",
+      "en": "biang-biang noodles",
+      "de": "Biang-Biang-Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "biang_biang_noodles"
+      ]
+    },
+    {
+      "key": "cold_dishes",
+      "zh": "凉菜",
+      "en": "cold dishes",
+      "de": "kalte Gerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "malatang",
+      "zh": "麻辣烫",
+      "en": "malatang",
+      "de": "Malatang",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "malatang"
+      ]
+    },
+    {
+      "key": "late_night_eats",
+      "zh": "夜宵",
+      "en": "late-night eats",
+      "de": "Late-Night-Gerichte",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "fast_casual_meals",
+      "zh": "快餐简餐",
+      "en": "fast casual meals",
+      "de": "Schnellgerichte",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "hand_pulled_noodles",
+      "zh": "手拉面",
+      "en": "hand-pulled noodles",
+      "de": "handgezogene Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "hand_pulled_noodles"
+      ]
+    },
+    {
+      "key": "mixed_noodles",
+      "zh": "拌面",
+      "en": "mixed noodles",
+      "de": "gemischte Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "halal",
+      "zh": "清真",
+      "en": "halal",
+      "de": "Halal",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "halal"
+      ]
+    },
+    {
+      "key": "vegetarian",
+      "zh": "素食",
+      "en": "vegetarian",
+      "de": "Vegetarisch",
+      "group": "style_or_scene",
+      "codeHints": [
+        "vegetarian"
+      ]
+    },
+    {
+      "key": "buffet",
+      "zh": "自助餐",
+      "en": "buffet",
+      "de": "Buffet",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "buffet"
+      ]
+    },
+    {
+      "key": "shanghai_cuisine",
+      "zh": "上海菜",
+      "en": "Shanghai cuisine",
+      "de": "Shanghai-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "shanghai"
+      ]
+    },
+    {
+      "key": "northeastern_chinese_cuisine",
+      "zh": "东北菜",
+      "en": "Northeastern Chinese cuisine",
+      "de": "nordostchinesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "northeastern_chinese"
+      ]
+    },
+    {
+      "key": "family_dining",
+      "zh": "家庭聚餐",
+      "en": "family dining",
+      "de": "familienfreundliches Essen",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "sichuan_noodle_dishes",
+      "zh": "川味面食",
+      "en": "Sichuan noodle dishes",
+      "de": "Nudelgerichte nach Sichuan-Art",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan",
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "group_dining",
+      "zh": "聚餐",
+      "en": "group dining",
+      "de": "Essen in der Gruppe",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "fusion",
+      "zh": "Fusion",
+      "en": "fusion",
+      "de": "Fusion",
+      "group": "regional_or_style",
+      "codeHints": [
+        "asian"
+      ]
+    },
+    {
+      "key": "skewers",
+      "zh": "串烧",
+      "en": "skewers",
+      "de": "Spieße",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "skewers"
+      ]
+    },
+    {
+      "key": "mao_cai",
+      "zh": "冒菜",
+      "en": "mao cai",
+      "de": "Mao Cai",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "maocai"
+      ]
+    },
+    {
+      "key": "creative_chinese_cuisine",
+      "zh": "创意中餐",
+      "en": "creative Chinese cuisine",
+      "de": "kreative chinesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "northern_chinese_cuisine",
+      "zh": "北方菜",
+      "en": "northern Chinese cuisine",
+      "de": "nordchinesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "northern_chinese"
+      ]
+    },
+    {
+      "key": "dandan_noodles",
+      "zh": "担担面",
+      "en": "dandan noodles",
+      "de": "Dandan-Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan",
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "noodle_soups",
+      "zh": "汤面",
+      "en": "noodle soups",
+      "de": "Nudelsuppen",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "build_your_own_hotpot",
+      "zh": "自选锅物",
+      "en": "build-your-own hotpot",
+      "de": "Hotpot nach Wahl",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "hotpot"
+      ]
+    },
+    {
+      "key": "hong_kong_cafe",
+      "zh": "茶餐厅",
+      "en": "Hong Kong cafe",
+      "de": "Hongkong-Café",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "hong_kong"
+      ]
+    },
+    {
+      "key": "dough_dishes",
+      "zh": "面点",
+      "en": "dough dishes",
+      "de": "Teigwaren",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northern_chinese"
+      ]
+    },
+    {
+      "key": "broad_chinese_menu",
+      "zh": "中式综合",
+      "en": "broad Chinese menu",
+      "de": "breit aufgestellte chinesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "home_style_cooked_dishes",
+      "zh": "家常热菜",
+      "en": "home-style cooked dishes",
+      "de": "hausgemachte warme Gerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "sichuan_hotpot",
+      "zh": "川味火锅",
+      "en": "Sichuan hotpot",
+      "de": "Sichuan-Hotpot",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "sichuan",
+        "hotpot"
+      ]
+    },
+    {
+      "key": "seafood",
+      "zh": "海鲜",
+      "en": "seafood",
+      "de": "Meeresfrüchte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "asian"
+      ]
+    },
+    {
+      "key": "hunan_cuisine",
+      "zh": "湘菜",
+      "en": "Hunan cuisine",
+      "de": "Hunan-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "hunan"
+      ]
+    },
+    {
+      "key": "tea_drinks",
+      "zh": "茶饮",
+      "en": "tea drinks",
+      "de": "Teegetränke",
+      "group": "style_or_scene",
+      "codeHints": [
+        "tea_house"
+      ]
+    },
+    {
+      "key": "teahouse",
+      "zh": "茶馆",
+      "en": "teahouse",
+      "de": "Teehaus",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "tea_house"
+      ]
+    },
+    {
+      "key": "fast_food_chain",
+      "zh": "连锁快餐",
+      "en": "fast-food chain",
+      "de": "Fast-Food-Kette",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "fish_pot",
+      "zh": "鱼锅",
+      "en": "fish pot",
+      "de": "Fischtopf",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "wontons",
+      "zh": "云吞",
+      "en": "wontons",
+      "de": "Wan-Tan",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dumplings"
+      ]
+    },
+    {
+      "key": "knife_cut_noodles",
+      "zh": "刀削面",
+      "en": "knife-cut noodles",
+      "de": "messergeschnittene Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "taiwanese_cuisine",
+      "zh": "台湾菜",
+      "en": "Taiwanese cuisine",
+      "de": "taiwanesische Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "taiwanese"
+      ]
+    },
+    {
+      "key": "snacks",
+      "zh": "小吃",
+      "en": "snacks",
+      "de": "Snacks",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "casual_chinese_dining",
+      "zh": "小馆中餐",
+      "en": "casual Chinese dining",
+      "de": "lockere chinesische Küche",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "dry_pot",
+      "zh": "干锅",
+      "en": "dry pot",
+      "de": "Dry Pot",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "breakfast_snacks",
+      "zh": "早餐小吃",
+      "en": "breakfast snacks",
+      "de": "Frühstückssnacks",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "boiled_chili_oil_dishes",
+      "zh": "水煮",
+      "en": "boiled chili-oil dishes",
+      "de": "Gerichte in Chiliöl-Brühe",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "jiangsu_zhejiang_cuisine",
+      "zh": "江浙菜",
+      "en": "Jiangsu-Zhejiang cuisine",
+      "de": "Jiangsu-Zhejiang-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "jiangsu"
+      ]
+    },
+    {
+      "key": "seafood_buffet",
+      "zh": "海鲜自助",
+      "en": "seafood buffet",
+      "de": "Meeresfrüchtebuffet",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "buffet"
+      ]
+    },
+    {
+      "key": "grilled_fish",
+      "zh": "烤鱼",
+      "en": "grilled fish",
+      "de": "gegrillter Fisch",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "jianbing",
+      "zh": "煎饼果子",
+      "en": "jianbing",
+      "de": "Jianbing",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northern_chinese"
+      ]
+    },
+    {
+      "key": "rice_noodles",
+      "zh": "米线",
+      "en": "rice noodles",
+      "de": "Reisnudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "crispy_duck",
+      "zh": "脆皮鸭",
+      "en": "crispy duck",
+      "de": "knusprige Ente",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "cantonese"
+      ]
+    },
+    {
+      "key": "tea_snacks",
+      "zh": "茶食",
+      "en": "tea snacks",
+      "de": "Teesnacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "tea_house"
+      ]
+    },
+    {
+      "key": "street_food",
+      "zh": "街头小吃",
+      "en": "street food",
+      "de": "Streetfood",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "chongqing_noodles",
+      "zh": "重庆小面",
+      "en": "Chongqing noodles",
+      "de": "Chongqing-Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "hotpot_dishes",
+      "zh": "锅物",
+      "en": "hotpot dishes",
+      "de": "Hotpot-Gerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "hotpot"
+      ]
+    },
+    {
+      "key": "cocktail_bar_dining",
+      "zh": "鸡尾酒餐吧",
+      "en": "cocktail bar dining",
+      "de": "Cocktailbar-Restaurant",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "ktv_restaurant",
+      "zh": "KTV餐厅",
+      "en": "KTV restaurant",
+      "de": "KTV-Restaurant",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "chinese_quick_meals",
+      "zh": "中式简餐",
+      "en": "Chinese quick meals",
+      "de": "chinesische Schnellgerichte",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "yunnan_cuisine",
+      "zh": "云南菜",
+      "en": "Yunnan cuisine",
+      "de": "Yunnan-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "yunnan"
+      ]
+    },
+    {
+      "key": "wonton_noodles",
+      "zh": "云吞面",
+      "en": "wonton noodles",
+      "de": "Wan-Tan-Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "hong_kong",
+        "noodle_house",
+        "dumplings"
+      ]
+    },
+    {
+      "key": "healthy_light_meals",
+      "zh": "健康轻食",
+      "en": "healthy light meals",
+      "de": "leichte gesunde Gerichte",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "cold_starters",
+      "zh": "冷菜",
+      "en": "cold starters",
+      "de": "kalte Vorspeisen",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "creative_chinese_style_dishes",
+      "zh": "创意中式",
+      "en": "creative Chinese-style dishes",
+      "de": "kreative chinesisch inspirierte Gerichte",
+      "group": "regional_or_style",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "northern_chinese_dough_dishes",
+      "zh": "北方面点",
+      "en": "northern Chinese dough dishes",
+      "de": "nordchinesische Teigwaren",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northern_chinese"
+      ]
+    },
+    {
+      "key": "sichuan_snacks",
+      "zh": "四川小吃",
+      "en": "Sichuan snacks",
+      "de": "Sichuan-Snacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "banquet_mains",
+      "zh": "大菜",
+      "en": "banquet mains",
+      "de": "große Hauptgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "banquet_dishes",
+      "zh": "宴席菜",
+      "en": "banquet dishes",
+      "de": "Bankettgerichte",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "home_style_flavors",
+      "zh": "家常口味",
+      "en": "home-style flavors",
+      "de": "hausgemachte Aromen",
+      "group": "style_or_scene",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "stir_fries",
+      "zh": "小炒",
+      "en": "stir-fries",
+      "de": "Wokgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "sichuan_snacks",
+      "zh": "川味小吃",
+      "en": "Sichuan snacks",
+      "de": "Sichuan-Snacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "sichuan_hunan_cuisine",
+      "zh": "川湘菜",
+      "en": "Sichuan-Hunan cuisine",
+      "de": "Sichuan-Hunan-Küche",
+      "group": "regional_or_style",
+      "codeHints": [
+        "sichuan",
+        "hunan"
+      ]
+    },
+    {
+      "key": "market_stall_fare",
+      "zh": "市场档口",
+      "en": "market stall fare",
+      "de": "Gerichte vom Marktstand",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "market_quick_meals",
+      "zh": "市场简餐",
+      "en": "market quick meals",
+      "de": "Schnellgerichte im Markt",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "chao_shou",
+      "zh": "抄手",
+      "en": "chao shou",
+      "de": "Chao Shou",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dumplings"
+      ]
+    },
+    {
+      "key": "rice_and_noodle_dishes",
+      "zh": "拌饭面食",
+      "en": "rice and noodle dishes",
+      "de": "Reis- und Nudelgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "jianghu_cuisine",
+      "zh": "江湖菜",
+      "en": "jianghu cuisine",
+      "de": "Jianghu-Küche",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "soups_rice_and_noodles",
+      "zh": "汤饭面",
+      "en": "soups, rice and noodles",
+      "de": "Suppen, Reis- und Nudelgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "thai_curry",
+      "zh": "泰式咖喱",
+      "en": "Thai curry",
+      "de": "Thai-Curry",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "thai"
+      ]
+    },
+    {
+      "key": "seafood_hotpot",
+      "zh": "海鲜火锅",
+      "en": "seafood hotpot",
+      "de": "Meeresfrüchte-Hotpot",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "hotpot"
+      ]
+    },
+    {
+      "key": "hong_kong_style_dim_sum",
+      "zh": "港式点心",
+      "en": "Hong Kong-style dim sum",
+      "de": "Dim Sum im Hongkong-Stil",
+      "group": "regional_or_style",
+      "codeHints": [
+        "hong_kong",
+        "dim_sum"
+      ]
+    },
+    {
+      "key": "fried_rice",
+      "zh": "炒饭",
+      "en": "fried rice",
+      "de": "gebratener Reis",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "roast_duck",
+      "zh": "烤鸭",
+      "en": "roast duck",
+      "de": "Entenbraten",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "cantonese"
+      ]
+    },
+    {
+      "key": "yibin_ranmian",
+      "zh": "燃面",
+      "en": "Yibin ranmian",
+      "de": "Yibin-Ranmian",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan",
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "modern_snacks",
+      "zh": "现代小吃",
+      "en": "modern snacks",
+      "de": "moderne Snacks",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "clay_pot_soups",
+      "zh": "瓦罐汤",
+      "en": "clay-pot soups",
+      "de": "Suppen aus dem Tontopf",
+      "group": "dish_or_menu_focus",
+      "codeHints": []
+    },
+    {
+      "key": "sweet_and_savory_dim_sum",
+      "zh": "甜咸点心",
+      "en": "sweet and savory dim sum",
+      "de": "süße und herzhafte Dim Sum",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "dim_sum"
+      ]
+    },
+    {
+      "key": "rice_bowls",
+      "zh": "盖饭",
+      "en": "rice bowls",
+      "de": "Reisschalen",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "rice_bowls_and_quick_meals",
+      "zh": "盖饭简餐",
+      "en": "rice bowls and quick meals",
+      "de": "Reisschalen und Schnellgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "rice_bowls_and_noodle_dishes",
+      "zh": "盖饭面食",
+      "en": "rice bowls and noodle dishes",
+      "de": "Reisschalen und Nudelgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "neighborhood_chinese_food",
+      "zh": "社区中餐",
+      "en": "neighborhood Chinese food",
+      "de": "chinesische Nachbarschaftsküche",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "neighborhood_shop",
+      "zh": "社区小店",
+      "en": "neighborhood shop",
+      "de": "kleines Nachbarschaftslokal",
+      "group": "style_or_scene",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "casual_meals",
+      "zh": "简餐",
+      "en": "casual meals",
+      "de": "leichte Gerichte",
+      "group": "format_or_occasion",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "congee_and_noodles",
+      "zh": "粥面",
+      "en": "congee and noodles",
+      "de": "Congee und Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "hong_kong",
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "rice_noodle_rolls",
+      "zh": "肠粉",
+      "en": "rice noodle rolls",
+      "de": "Reisnudelrollen",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "cantonese",
+        "hong_kong",
+        "dim_sum"
+      ]
+    },
+    {
+      "key": "tea_snacks",
+      "zh": "茶点",
+      "en": "tea snacks",
+      "de": "Teesnacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "tea_house"
+      ]
+    },
+    {
+      "key": "tea_drinks_and_snacks",
+      "zh": "茶饮小吃",
+      "en": "tea drinks and snacks",
+      "de": "Teegetränke und Snacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "tea_house"
+      ]
+    },
+    {
+      "key": "mongolian_barbecue",
+      "zh": "蒙古烤肉",
+      "en": "Mongolian barbecue",
+      "de": "Mongolisches Barbecue",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "bbq"
+      ]
+    },
+    {
+      "key": "steamed_dishes_and_banquet_mains",
+      "zh": "蒸菜大菜",
+      "en": "steamed dishes and banquet mains",
+      "de": "gedämpfte Gerichte und große Hauptgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "steamed_dishes_and_stir_fries",
+      "zh": "蒸菜热炒",
+      "en": "steamed dishes and stir-fries",
+      "de": "gedämpfte Gerichte und Wokgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "soy_milk_drinks",
+      "zh": "豆浆饮品",
+      "en": "soy milk drinks",
+      "de": "Sojamilchgetränke",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northern_chinese"
+      ]
+    },
+    {
+      "key": "douhua",
+      "zh": "豆花",
+      "en": "douhua",
+      "de": "Douhua",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "chinese"
+      ]
+    },
+    {
+      "key": "crossing_the_bridge_rice_noodles",
+      "zh": "过桥米线",
+      "en": "crossing-the-bridge rice noodles",
+      "de": "Guoqiao-Mixian",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "yunnan",
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "guobaorou",
+      "zh": "锅包肉",
+      "en": "guobaorou",
+      "de": "Guobaorou",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "northeastern_chinese"
+      ]
+    },
+    {
+      "key": "noodles_and_rice",
+      "zh": "面饭",
+      "en": "noodles and rice",
+      "de": "Nudeln und Reis",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "noodles_rice_and_quick_meals",
+      "zh": "面饭简餐",
+      "en": "noodles, rice and quick meals",
+      "de": "Nudel-, Reis- und Schnellgerichte",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "noodle_house"
+      ]
+    },
+    {
+      "key": "korean_fusion",
+      "zh": "韩式融合",
+      "en": "Korean fusion",
+      "de": "koreanische Fusion",
+      "group": "regional_or_style",
+      "codeHints": [
+        "korean"
+      ]
+    },
+    {
+      "key": "fresh_chili_fish",
+      "zh": "鲜椒鱼",
+      "en": "fresh chili fish",
+      "de": "Fisch mit frischen Chilis",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "spicy_snacks",
+      "zh": "麻辣小吃",
+      "en": "spicy snacks",
+      "de": "würzige Snacks",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan"
+      ]
+    },
+    {
+      "key": "spicy_noodles",
+      "zh": "麻辣面",
+      "en": "spicy noodles",
+      "de": "würzige Nudeln",
+      "group": "dish_or_menu_focus",
+      "codeHints": [
+        "sichuan",
+        "noodle_house"
+      ]
+    }
+  ]
+}
