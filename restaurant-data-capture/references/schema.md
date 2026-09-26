@@ -113,6 +113,7 @@ For this skill, `inferred` is a required frontend display layer rather than an o
 - `short_description_de`
 - `operating_status`
 - `is_new_opening`
+- `openedAt`
 
 Keep the wording concise, factual, and grounded in the packet evidence.
 
@@ -127,6 +128,13 @@ Keep the wording concise, factual, and grounded in the packet evidence.
 - `true`
 - `false`
 - `null`
+
+`openedAt` values:
+
+- a known opening date in `YYYY-MM-DD` format
+- `null` when the opening date cannot be established reliably
+
+Do not infer `openedAt` from packet creation, update, review, or source-capture dates. Backfill it progressively for new-opening restaurants when a reliable date becomes available.
 
 For an open new restaurant, use `operating_status: "operating"` and `is_new_opening: true`. The current serving pipeline uses `is_new_opening` for the new-restaurant badge and maps `operating_status` separately for open/closed display.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pinwo Weekly Discount Popup"
+  short_description: "Design, preview, and release Pinwo weekly coupon popups"
+  default_prompt: "Use $pinwo-weekly-discount-popup to prepare the next Pinwo weekly coupon popup."

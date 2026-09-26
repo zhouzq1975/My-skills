@@ -16,7 +16,7 @@ Work in this order unless the user provides a stronger source directly:
 4. `tripadvisor`
 5. `google_maps_menu_photo`
 
-Delivery menu collection is mandatory whenever the branch has a live delivery platform presence. Collect Wolt, Uber Eats, Lieferando, or equivalent menus with `browser:control-in-app-browser` even if Google Maps menu photos or official menus already exist. The presence of another menu source does not waive delivery capture.
+Delivery menu collection is mandatory whenever the branch has a live delivery platform presence. Collect Wolt, Uber Eats, Lieferando, or equivalent menus with the currently available browser capability (following its tool instructions) even if Google Maps menu photos or official menus already exist. The presence of another menu source does not waive delivery capture.
 
 ## What to collect from each source family
 
@@ -105,7 +105,7 @@ Priority rule:
 - if `Wolt` yields a confirmed branch and usable menu evidence, stop delivery-platform collection there
 - if `Wolt` does not yield usable evidence, check `Uber Eats` next
 - if `Uber Eats` does not yield usable evidence, check `Lieferando` last
-- use `browser:control-in-app-browser` for all delivery platform menu capture and branch confirmation
+- use the currently available browser capability (following its tool instructions) for all delivery platform menu capture and branch confirmation
 - do not rely on `curl` alone for delivery menus because many pages are JavaScript-rendered or anti-bot protected
 
 Collect:
@@ -126,7 +126,7 @@ Do not treat the dish-code taxonomy as an output schema for the source packet. C
 Look for:
 
 - confirmed Tripadvisor restaurant page for the same branch
-- use `browser:control-in-app-browser` for Tripadvisor confirmation
+- use the currently available browser capability (following its tool instructions) for Tripadvisor confirmation
 
 Collect:
 
@@ -172,6 +172,7 @@ Required keys:
 - `short_description_de`
 - `operating_status`
 - `is_new_opening`
+- `openedAt`
 
 Rules:
 
@@ -180,6 +181,7 @@ Rules:
 - keep the wording factual and compact
 - do not invent facts that are not supported by the packet evidence
 - for open new restaurants, keep `operating_status: "operating"` and set `is_new_opening: true`; leave `is_new_opening: null` when newness is unknown
+- write `openedAt` as a `YYYY-MM-DD` date only when the opening date is reliably known; otherwise use `null`, and never derive it from packet metadata or source-capture dates
 - if evidence is too sparse for a reliable summary, leave `quality.servingReadiness` as `not_ready` and document the gap in `quality.needsReview`
 
 When normalizing cuisine/type identity, keep `normalized.cuisineCodes` as the canonical cuisine taxonomy field.
@@ -211,7 +213,7 @@ Before marking a packet `ready`, verify it is useful for the repository's curren
 
 ## Practical constraints
 
-- if a site does not load directly, start `browser:control-in-app-browser` before marking it inaccessible
+- if a site does not load directly, start the currently available browser capability (following its tool instructions) before marking it inaccessible
 - do not stop if Google Maps web content is inaccessible after Google Places succeeded and the missing fields are non-critical
 - do not merge branches unless identity is clear
 - do not treat one review mention as menu confirmation

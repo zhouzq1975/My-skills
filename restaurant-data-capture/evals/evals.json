@@ -1,0 +1,17 @@
+{
+  "skill_name": "restaurant-data-capture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只把这家店 packet 中开业日期改为我确认的日期，保留其余证据。",
+      "expected_output": "Inspect affected identity/date fields and relevant schema; preserve other sources without restarting unrelated collection.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "新建餐厅 packet，但目标同名 JSON 已存在。",
+      "expected_output": "Inspect and update existing evidence instead of running the overwriting initializer; do not seed with the bundled example restaurant.",
+      "files": []
+    }
+  ]
+}

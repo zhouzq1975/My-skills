@@ -1,9 +1,9 @@
 ---
 name: standup-log-capture
-description: Create or update repository-grounded daily standup, dev, handoff, or continuation logs intended to let a future AI session resume work. Use when the user asks for a standup log, dev log, handoff record, AI continuation context, or a durable record of today's repository work with specs, decisions, commits, diffs, validation, external state, and next-session entry points. Do not use for a casual chat recap, meeting minutes, a human performance/status report, release notes, or a generic project summary that does not need AI-resumable repository context.
+description: "Create concise, repository-grounded handoff logs with verified state, decisions, and a concrete next-session entry point."
 metadata:
   author: Ziqiang Zhou
-  version: 1.1
+  version: "1.2"
 ---
 
 # Standup Log Capture
@@ -33,7 +33,7 @@ Do not write a polished human status report. Write a compact project memory arti
    - Use the user's requested date if provided.
    - Otherwise use the local current date.
    - Prefer `docs/dev_logs/YYYY-MM-DD-<topic>-standup-log.md` unless the repo has another convention.
-   - If a same-day log exists, update it rather than creating a duplicate unless the user asks for a new log.
+   - Reuse a same-day log for the same project and topic; do not merge unrelated tasks merely because their dates match.
 
 2. Establish project context.
    - Read the current request and recent conversation context.
@@ -43,9 +43,9 @@ Do not write a polished human status report. Write a compact project memory arti
 
 3. Gather repository evidence.
    - Confirm the repository root and active branch before interpreting paths or git state.
-   - Run `git status --short --ignored` and `git diff --stat` when the worktree is relevant.
+   - Use `git status --short` and scoped diffs. Check ignore status only for relevant paths with `git check-ignore`; do not enumerate all ignored build artifacts.
    - Inspect diffs for important touched files; do not infer behavior from filenames alone.
-   - Check recent commits with `git log --oneline --decorate -N` when commit history matters to continuation.
+   - Check recent commits with `git log --oneline --decorate -10` when commit history matters to continuation.
    - Read existing standup logs for the current project when they exist.
    - Read validation output or rerun lightweight validation if the user expects current verification.
    - Scale evidence gathering to the session: do not run unrelated broad tests or inspect unrelated dirty files merely to fill the template.
@@ -64,22 +64,13 @@ Do not write a polished human status report. Write a compact project memory arti
    - Mention validation performed or not performed.
    - If the user asked to commit, respect ignored-file policy and commit only the intended scope.
 
-## Required Sections
+## Minimum Handoff Content
 
-Every log must include:
+Keep project context, current verified state and validation limits, important decisions, and a concrete next-session entry point. These may be short paragraphs for a small task; eight fixed sections are not required.
 
-- `Project Context`
-- `Session Scope`
-- `Completed Work`
-- `Product / Design Decisions`
-- `Technical Decisions`
-- `Validation`
-- `Current Workspace State`
-- `Next Session Start Here`
+Add external data state, product/design decisions, technical detail, or commit status only when useful for continuation. Preserve explicit negative facts such as "production database not touched" when they prevent a dangerous assumption. Never invent activity to fill a template.
 
-Use `Data / External State` when the work touched remote databases, imports, generated exports, APIs, production config, or other non-git state.
-
-Omit optional subsections that add no continuation value. Do not invent "none" entries merely to make the log look complete, except where an explicit negative fact such as "production database not touched" prevents a dangerous assumption.
+If no Git repository exists, ground the log in actual files and observed actions and state that Git evidence is unavailable.
 
 ## What To Capture In "Next Session Start Here"
 

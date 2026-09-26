@@ -1,0 +1,17 @@
+{
+  "skill_name": "pinwo-weekly-discount-popup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只提交已经验证的弹窗改动，不 push。",
+      "expected_output": "Create and verify a scoped local commit only; no push or deployment.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "只修正德文弹窗一句话，不改优惠日期或配图。",
+      "expected_output": "Change only that copy, verify affected rendering, preserve dates/assets/claim logic, and do not regenerate campaign materials.",
+      "files": []
+    }
+  ]
+}

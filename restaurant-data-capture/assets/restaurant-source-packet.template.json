@@ -81,7 +81,8 @@
     "short_description_en": null,
     "short_description_de": null,
     "operating_status": "operating",
-    "is_new_opening": null
+    "is_new_opening": null,
+    "openedAt": null
   },
   "extracted": {
     "cuisineTags": {

@@ -12,7 +12,9 @@
     "bbq",
     "skewers",
     "hotpot_bbq",
-    "taiwanese_noodle_house"
+    "taiwanese_noodle_house",
+    "dessert_cafe",
+    "tea_shop"
   ],
   "categories": {
     "restaurant": {
@@ -74,6 +76,16 @@
       "zh": "台湾面馆",
       "en": "Taiwanese noodle house",
       "de": "Taiwanesisches Nudelhaus"
+    },
+    "dessert_cafe": {
+      "zh": "甜品咖啡馆",
+      "en": "Dessert café",
+      "de": "Dessert-Café"
+    },
+    "tea_shop": {
+      "zh": "茶饮店",
+      "en": "Tea shop",
+      "de": "Teeladen"
     }
   },
   "aliases": {
@@ -121,6 +133,19 @@
     "taiwanese noodles": "taiwanese_noodle_house",
     "taiwanese_noodles": "taiwanese_noodle_house",
     "taiwanese noodle house": "taiwanese_noodle_house",
-    "taiwanese_noodle_house": "taiwanese_noodle_house"
+    "taiwanese_noodle_house": "taiwanese_noodle_house",
+    "dessert_cafe": "dessert_cafe",
+    "甜品咖啡馆": "dessert_cafe",
+    "Dessert café": "dessert_cafe",
+    "Dessert-Café": "dessert_cafe",
+    "tea_shop": "tea_shop",
+    "茶饮店": "tea_shop",
+    "Tea shop": "tea_shop",
+    "Teeladen": "tea_shop",
+    "dessert cafe": "dessert_cafe",
+    "甜点店": "dessert_cafe",
+    "甜品店": "dessert_cafe",
+    "奶茶店": "tea_shop",
+    "bubble tea shop": "tea_shop"
   }
 }

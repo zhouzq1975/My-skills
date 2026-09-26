@@ -1,0 +1,17 @@
+{
+  "skill_name": "pinwo-app-data-sync",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "检查当前餐券和合作 App 数据的差异，不提交 PR。",
+      "expected_output": "Use fresh live coupon evidence exported outside the read-only source repo; audit only, with no YAML edits or PR submission.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把核实过的餐厅变更提交为合作数据库 PR。",
+      "expected_output": "Edit only the target fork YAML, validate from correct roots, submit the authorized PR, and do not merge or run downstream Firestore sync.",
+      "files": []
+    }
+  ]
+}

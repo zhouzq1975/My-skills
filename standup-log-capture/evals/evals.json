@@ -1,0 +1,17 @@
+{
+  "skill_name": "standup-log-capture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "给刚才改一个按钮的工作写一个简短交接。",
+      "expected_output": "Provide verified scope/state, validation limits and next entry point without eight empty sections or broad ignored-file scans.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把今天同一项目同一主题的交接补充到已有日志。",
+      "expected_output": "Update the matching log, preserve prior decisions, and do not attribute unrelated dirty changes to this task.",
+      "files": []
+    }
+  ]
+}

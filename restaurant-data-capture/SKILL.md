@@ -1,9 +1,9 @@
 ---
 name: restaurant-data-capture
-description: Create or refresh source-grounded Pinwo restaurant Source Packet V3 JSON files under data/restaurants. Use when collecting one or more restaurant branches from Google Places, official sites, delivery menus, Tripadvisor, or Google Maps menu photos; normalizing identity, menu, review, cuisine, dish, and search evidence; or deciding whether a packet is ready for restaurantCatalog/search publication. Do not use for editing restaurant UI, directly authoring restaurantCatalog serving documents, generic restaurant research, or publishing editorial articles.
+description: "Create or refresh branch-specific Pinwo Source Packet V3 restaurant evidence. Not editorial writing or downstream database publication."
 metadata:
   author: Ziqiang Zhou
-  version: 1.3
+  version: "1.5"
 ---
 
 # Restaurant Data Capture
@@ -26,9 +26,11 @@ Before creating or materially refreshing a packet:
 1. Read [`references/workflow.md`](references/workflow.md) for source order, blocking rules, and source-specific collection policy.
 2. Read [`references/schema.md`](references/schema.md) for field shapes, controlled values, and publishability rules.
 3. Inspect the current repository baseline at `$PINWO_REPO/docs/specs/2026-06-07-restaurant-source-packet-v3-design.md` and the structural sample at `$PINWO_REPO/data/restaurants/berlin__7-dumpling__source-packet.json`.
-4. If the repository contract and this skill disagree, stop and report the drift before writing packet data. Do not silently choose an older shape.
+4. If contracts disagree materially on field meaning, taxonomy, or publishability, stop the affected write and report the drift. Clear path moves or documentation-only differences can follow current code and be reported without a permission loop. Do not invent migrations or silently select an obsolete shape.
 
 Use the bundled template at `assets/restaurant-source-packet.template.json` for new packets.
+
+For a narrow evidence correction, inspect the affected fields and relevant rules rather than restarting full collection. Preserve other valid evidence. The Google API operational-blocker policy still applies to collection runs that require that API.
 
 ## Invariants
 
@@ -58,9 +60,9 @@ Do not emit legacy keys or structures documented as obsolete in `references/sche
 
 ## Browser And Access Policy
 
-Use direct HTTP or APIs when they provide complete, attributable data. When a dynamic page, redirect, anti-bot screen, interstitial, or login wall prevents reliable access, use the available `browser:control-in-app-browser` skill before declaring the source inaccessible.
+Use direct HTTP or APIs when they provide complete, attributable data. When a dynamic page, redirect, anti-bot screen, interstitial, or login wall prevents reliable access, use currently available browser/computer-use tools before declaring the source inaccessible. Discover the actual capability; do not require an obsolete skill name or install a browser plugin automatically.
 
-Use the in-app browser for Wolt, Uber Eats, Lieferando, Tripadvisor, Google Maps menu/photo surfaces, and comparable dynamic pages. Do not hardcode a plugin-cache version path; invoke the currently available browser skill by name.
+Use the in-app browser for Wolt, Uber Eats, Lieferando, Tripadvisor, Google Maps menu/photo surfaces, and comparable dynamic pages. Do not hardcode a plugin-cache version path. Follow the current browser tool's instructions, respect login boundaries, and report unavailable access honestly.
 
 Record access outcomes in `source_packet`, including sources that were found but not accessed, required login, failed, or referred to another branch.
 
@@ -72,12 +74,14 @@ Confirm canonical name, branch, normalized address, geo or location evidence, an
 
 ### 2. Initialize or inspect the packet
 
-For a new packet, run:
+For a new packet, prepare a seed with the confirmed branch's actual identity. The bundled example is a field reference, not the seed to use for a real restaurant. Set SEED_PATH to that file and verify the computed city/restaurant destination does not already exist; the initializer can overwrite an existing packet.
 
 ```bash
 python3 "$SKILL_DIR/scripts/init_restaurant_packet.py" \
-  --seed "$SKILL_DIR/assets/restaurant-seed.example.json"
+  --seed "$SEED_PATH" --output "$PINWO_REPO/data/restaurants"
 ```
+
+For an existing destination, update the packet in place instead of running the initializer.
 
 For an existing packet, inspect its schema version and current evidence before fetching. Preserve valid evidence and provenance; do not replace the whole file merely to refresh one source.
 
@@ -122,6 +126,7 @@ Keep detailed menu, review, taxonomy, and allowed-value rules in `references/sch
 - keep raw food-specific reviews grouped by platform;
 - use `dishEntities.isPrimary` selectively when there are at least five dishes;
 - keep `inferred.operating_status: "operating"` for an open new restaurant and use `inferred.is_new_opening: true` as the new-opening signal.
+- keep `inferred.openedAt` as a reliable `YYYY-MM-DD` opening date or `null` when the date cannot be established; do not infer it from packet metadata or source-capture dates.
 
 Do not put workflow commentary, review notes, or data-cleaning language in consumer-facing `inferred` copy.
 

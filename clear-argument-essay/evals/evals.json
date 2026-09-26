@@ -1,0 +1,17 @@
+{
+  "skill_name": "clear-argument-essay",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只润色这段观点文章，保留故事开头和我的立场。",
+      "expected_output": "Revise only requested prose; preserve the narrative opening and position; do not force the thesis into paragraph one.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "检查这篇文章的论证问题，不要改写。",
+      "expected_output": "Return concrete reasoning and evidence issues; no unsolicited rewrite or invented supporting facts.",
+      "files": []
+    }
+  ]
+}

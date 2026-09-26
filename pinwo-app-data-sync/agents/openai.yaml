@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pinwo App Data Sync"
+  short_description: "Sync Pinwo data into scoped app-database YAML PRs"
+  default_prompt: "Use $pinwo-app-data-sync to reconcile current Pinwo restaurant and coupon changes with the public app database and prepare a validated scoped PR."

@@ -1,9 +1,9 @@
 ---
 name: pinwo-article-publishing
-description: Publish or update Pinwo editorial content in the repository-managed structured trilingual ArticleEntry system. Use when turning a finished or near-finished draft into a Chinese/English/German Pinwo story page; adding article metadata, AI summary, FAQ, JSON-LD inputs, image credits, restaurant/coupon references, search chips, homepage placement, visibility, registry, sitemap, or article tests; or preparing a verified article release and handoff. Do not use for generic copywriting outside Pinwo, restaurant source-packet collection, admin-only corrections, or unstructured blog drafts that are not being integrated into the Pinwo repository.
+description: "Integrate approved articles into Pinwo's ArticleEntry system, including requested locales, metadata, media rights, and validation. Not a second editorial rewrite."
 metadata:
   author: Ziqiang Zhou
-  version: 1.1
+  version: "1.2"
 ---
 
 # Pinwo Article Publishing
@@ -16,7 +16,7 @@ Publish Pinwo articles through the repository's structured `ArticleEntry` system
 PINWO_REPO="/Volumes/媒体/chopmap"
 ```
 
-Before editing:
+For a new entry or material schema/integration change:
 
 1. Confirm the repository root, active branch, and current dirty state. Preserve unrelated user changes.
 2. Read [`references/article-schema.md`](references/article-schema.md).
@@ -25,6 +25,8 @@ Before editing:
 5. Identify one primary intent from the current `ArticleIntent` union. At this version: `dish_guide`, `where_to_eat`, `restaurant_story`, `ingredient_explainer`, `coupon_news`, or `about`.
 
 If the repository contract differs materially from the skill, report the drift and follow the current type definition. Update this skill separately rather than encoding an obsolete field shape into a new article.
+
+For a narrow text or metadata update, read the affected entry and relevant contract only. Do not reread all references or expand the task to a fresh publication workflow.
 
 ## Editorial Rules
 
@@ -36,7 +38,7 @@ If the repository contract differs materially from the skill, report the drift a
 - Link restaurant facts through `restaurantCatalog` ids/slugs and coupon facts through coupon ids. Do not duplicate those systems as a new source of truth.
 - Use source-grounded restaurant data when article claims depend on menu, branch, opening, or dish facts.
 
-When the user supplies a final draft, make only the structural, locale, metadata, or explicitly requested editorial changes needed for publication. Surface any required schema-driven copy change before making it when it would alter meaning or voice.
+When the user supplies a final draft, treat its meaning and deliberate wording as locked. Prefer a compatible technical representation over altering the prose; do not change architecture beyond scope. Make only requested or contract-required structural, locale, and metadata changes. Surface any required schema-driven copy change before making it when it would alter meaning or voice.
 
 ## Publishing Workflow
 
@@ -48,7 +50,7 @@ Confirm the primary intent, target slug, publication state, homepage placement, 
 
 Create or modify one file under `$PINWO_REPO/src/data/articles/` using the current `ArticleEntry` type and the nearest valid article as a structural example.
 
-Complete all required top-level and `locales.zh/en/de` fields. Keep search chips canonical, references identifier-based, and homepage/visibility settings explicit. Use `hideHeading: true` only for body sections intentionally omitted from the table of contents.
+For a new publish-ready entry, complete all required top-level and `locales.zh/en/de` fields. For an existing entry, change only requested locales and fields; do not automatically retranslate the entire article. If a factual correction leaves other locales materially inconsistent, flag that release blocker and the exact follow-up needed rather than claiming full trilingual readiness. Keep search chips canonical, references identifier-based, and homepage/visibility settings explicit. Use `hideHeading: true` only for body sections intentionally omitted from the table of contents.
 
 ### 3. Verify media rights
 
@@ -85,7 +87,9 @@ Return the article path, slug and intent, locale status, references, media-right
 
 Use another skill only when that subtask is actually in scope:
 
-- `copywriting` for new marketing/editorial copy.
+- `pinwo-restaurant-editorial` for restaurant recommendations or promotional articles.
+- `clear-argument-essay` for personal argument-led nonfiction when explicitly in scope.
+- `copywriting` for other marketing copy, not as a mandatory rewrite of accepted text.
 - `copy-editing` for revision of an existing draft.
 - `ai-seo` for answer extraction and AI-search structure.
 - `seo-audit` for indexing, sitemap, or technical SEO diagnosis.

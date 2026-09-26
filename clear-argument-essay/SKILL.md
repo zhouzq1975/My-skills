@@ -1,9 +1,9 @@
 ---
 name: clear-argument-essay
-description: Draft, diagnose, outline, or revise argument-led nonfiction so one specific claim appears early, advances through a visible reasoning chain, and is supported by concrete examples. Use for essays, analytical blog posts, founder or startup analysis, opinion pieces, reflective nonfiction, newsletters, and notes that should become a publishable argument. Do not use for fiction, poetry, citation-heavy academic papers, legal writing, sales copy, or generic promotional thought leadership.
+description: "Draft or revise personal essays and analytical nonfiction while preserving the author's position, voice, and chosen structure. Not restaurant promotion or publishing."
 metadata:
   author: Ziqiang Zhou
-  version: 1.1
+  version: "1.2"
 ---
 
 # Clear Argument Essay
@@ -15,8 +15,8 @@ Write for clarity of argument, not for ornamental polish or imitation of another
 Unless the user specifies otherwise:
 
 - preserve the author's actual view and factual claims;
-- state one central thesis in the first paragraph, usually within 2-4 sentences;
-- use 2-5 supporting moves along one visible reasoning spine;
+- make the central view understandable early enough for the chosen form; preserve a deliberate narrative opening or gradual reveal;
+- use only the supporting moves the argument needs, without a fixed count;
 - prefer plain words, concrete nouns, and short-to-medium paragraphs;
 - use examples as evidence, then extract the general rule;
 - address the strongest material objection when it improves rigor;
@@ -24,6 +24,10 @@ Unless the user specifies otherwise:
 - avoid throat-clearing, jargon, inflated importance, and generic inspiration.
 
 Do not invent facts, quotations, personal experiences, or sources. When evidence is missing, mark the gap or ask for it instead of writing around it.
+
+## Scope
+
+Infer whether the user wants drafting, diagnosis, structure, line editing, or factual supplementation. Complete that task directly. A request to polish a paragraph does not authorize reframing the whole essay. Do not require an outline approval before writing. Preserve distinctive phrases and authorial uncertainty; distinguish factual claims from opinions and inferences.
 
 ## Workflow
 
@@ -48,7 +52,7 @@ Use one of these shapes as a starting point, not a rigid template:
 
 ### 3. Build the reasoning spine
 
-Outline the piece as a sequence of claims before polishing sentences. Each section or paragraph should do one main job and move the reader closer to accepting the thesis.
+For a substantial structural rewrite, map the argument if helpful. Do not generate or seek approval for an outline on every small edit. Each section or paragraph should do one main job and move the reader closer to accepting the thesis.
 
 Useful moves include:
 
@@ -105,7 +109,7 @@ Infer the central claim, show it explicitly when ambiguity matters, choose the s
 
 ### Revise an existing draft
 
-Preserve the author's view and strongest original language. Move the thesis upward, collapse overlapping paragraphs, remove warm-up language, replace abstraction with concrete phrasing, and flag factual or logical gaps rather than inventing support.
+Preserve the author's view, strongest original language, and deliberate structure. Adjust thesis placement or paragraph order only when structural revision is in scope. Flag factual or logical gaps rather than inventing support; do not silently change a disputed claim into a stronger fact.
 
 ### Diagnose
 
@@ -117,7 +121,7 @@ Return the thesis, intended reader, argument sequence, evidence needed, stronges
 
 ## Revision Passes
 
-Run these passes in order:
+Use these as optional review lenses at the requested depth, not mandatory sequential passes or a visible process report:
 
 1. **Thesis:** Is one disagreeable claim visible early?
 2. **Structure:** Do the first sentences of sections or paragraphs form a coherent chain?
@@ -130,11 +134,11 @@ Run these passes in order:
 
 Before returning the result, verify:
 
-- the main claim appears in the first paragraph;
+- the central view is clear within the author's chosen structure;
 - every major section serves that claim;
 - examples are connected explicitly to the reasoning;
 - unsupported facts and invented experiences are absent;
 - the prose sounds natural when read aloud;
 - the ending leaves a clearer model or decision rule than the opening.
 
-Revise before returning if any item fails.
+Fix material issues within the requested scope. Do not overwrite intentional style merely to satisfy a checklist.

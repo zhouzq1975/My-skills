@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pinwo 餐厅内容编辑"
+  short_description: "按实际需求写餐厅推荐、开业宣传或卡片，保留证据与商业表达边界"
+  default_prompt: "使用 $pinwo-restaurant-editorial，基于已有材料完成我指定的餐厅文案，不扩展到整套研究或网站发布。"

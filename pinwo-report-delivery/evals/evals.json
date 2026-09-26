@@ -1,0 +1,17 @@
+{
+  "skill_name": "pinwo-report-delivery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只重试上次失败的 Drive 交付，PDF 和 payload 没变。",
+      "expected_output": "Verify artifact/code/environment identity before reusing passed gates; otherwise rerun gates without regeneration. Deliver Drive only, no Sites action.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "生成本月报表供本地检查，不要上传。",
+      "expected_output": "Run monthly cadence only, keep all validation gates and artifact provenance, and do not upload, publish, or create a schedule.",
+      "files": []
+    }
+  ]
+}

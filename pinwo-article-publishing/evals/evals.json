@@ -1,0 +1,17 @@
+{
+  "skill_name": "pinwo-article-publishing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只修正现有文章中文版的一个错字，不重译其他语言。",
+      "expected_output": "Change the requested locale, preserve approved prose and other locales, and run proportionate validation without a full publication workflow.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把这份已定稿文章接入网站，暂不提交或上线。",
+      "expected_output": "Preserve approved meaning, satisfy current ArticleEntry requirements, flag missing locale/media rights, and stop at verified local integration.",
+      "files": []
+    }
+  ]
+}

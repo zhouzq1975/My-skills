@@ -1317,6 +1317,22 @@
         "sichuan",
         "noodle_house"
       ]
+    },
+    {
+      "key": "dessert_cafe",
+      "zh": "甜品咖啡馆",
+      "en": "Dessert café",
+      "de": "Dessert-Café",
+      "group": "format_or_occasion",
+      "codeHints": []
+    },
+    {
+      "key": "tea_shop",
+      "zh": "茶饮店",
+      "en": "Tea shop",
+      "de": "Teeladen",
+      "group": "format_or_occasion",
+      "codeHints": []
     }
   ]
 }

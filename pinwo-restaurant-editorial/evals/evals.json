@@ -1,0 +1,17 @@
+{
+  "skill_name": "pinwo-restaurant-editorial",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "根据这份已有菜单，只写一句餐厅卡片文案。",
+      "expected_output": "Write only a grounded card line; no full article, research pipeline, fabricated visit, or website edits.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "根据店方提供的开业信息写宣传文章。",
+      "expected_output": "Use promotional framing with verified terms and actual cooperation context; do not imply independent review, customer consensus, or personal visit.",
+      "files": []
+    }
+  ]
+}

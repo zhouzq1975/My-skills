@@ -44,10 +44,10 @@ Admin override compatibility:
 - Overrides can hide articles, pin/order homepage cards, reorder tags, and apply selected string text/link/image corrections.
 - Do not build article authoring flows in admin for first-scope CMS work.
 
-Publishing checklist:
+Publishing checklist for new entries or a full release; for existing-entry corrections check affected fields and report any release-blocking inconsistency:
 
 - Article has one primary intent.
-- Trilingual content is complete and audience-appropriate.
+- New publish-ready entries have complete, audience-appropriate trilingual content. A single-locale edit does not authorize rewriting the other editions; flag material factual divergence before release.
 - Search chips use canonical backend queries, not only localized display text.
 - Restaurant/coupon references point to source-of-truth ids.
 - Image rights are explicit.

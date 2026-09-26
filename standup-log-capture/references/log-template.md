@@ -2,6 +2,8 @@
 
 Use this template for daily project logs that future AI sessions will read before continuing work. Keep sections with no content only when they carry useful "none / not touched / not verified" information.
 
+This is an expanded section menu, not a mandatory form. For a small handoff, keep only Project Context, Current State (including validation limits and decisions), and Next Session Start Here. Do not create empty sections or repeat project history just to fill the template.
+
 ```md
 # <Project / Area> Standup Log
 
